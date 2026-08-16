@@ -1,0 +1,11 @@
+meta {
+  name: Config Server - config do user-service
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8888/user-service/default
+  body: none
+  auth: none
+}

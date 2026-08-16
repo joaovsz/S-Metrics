@@ -1,0 +1,15 @@
+meta {
+  name: Top Artists
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/stats/{{userId}}/top-artists?limit=10
+  body: none
+  auth: none
+
+  params:query {
+    limit: 10
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Consultar usuário
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/users/{{userId}}
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  userId: 1
+}

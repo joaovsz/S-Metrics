@@ -47,27 +47,14 @@ mvn -pl stats-service -am spring-boot:run
 
 ## Fluxo de uso (Postman/Insomnia)
 
-Para esta entrega, o token é obtido manualmente:
-
 1. **Criar usuário**
    `POST http://localhost:8080/api/users`
    ```json
    { "name": "João Vitor", "spotifyId": "seu_spotify_user_id" }
    ```
 
-2. **Gerar um Access Token do Spotify manualmente** no [Console de Desenvolvedor do Spotify](https://developer.spotify.com/console/get-recently-played/) ou via Postman, com os scopes `user-read-recently-played` e `user-top-read`.
-
-3. **Salvar o token no usuário criado**
-   `PUT http://localhost:8080/api/users/{id}/tokens`
-   ```json
-   { "accessToken": "BQC...", "refreshToken": "AQC..." }
-   ```
-
-4. **Disparar a sincronização** (stats-service busca o token via Feign no user-service e consulta a Spotify API)
-   `POST http://localhost:8080/api/stats/{userId}/sync`
-
-5. **Consultar Top Artists**
-   `GET http://localhost:8080/api/stats/{userId}/top-artists?limit=10`
+2. **Consultar usuário**
+   `GET http://localhost:8080/api/users/{id}`
 
 ## Estrutura do repositório
 

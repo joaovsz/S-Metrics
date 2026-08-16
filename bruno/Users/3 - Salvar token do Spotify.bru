@@ -1,0 +1,26 @@
+meta {
+  name: Salvar token do Spotify
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/api/users/{{userId}}/tokens
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "accessToken": "COLE_AQUI_O_ACCESS_TOKEN",
+    "refreshToken": "COLE_AQUI_O_REFRESH_TOKEN"
+  }
+}
+
+vars:pre-request {
+  userId: 1
+}

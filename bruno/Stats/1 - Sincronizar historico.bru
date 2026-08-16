@@ -1,0 +1,11 @@
+meta {
+  name: Sincronizar histórico (Spotify)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/stats/{{userId}}/sync
+  body: none
+  auth: none
+}
