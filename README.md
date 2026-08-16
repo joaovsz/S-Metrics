@@ -21,7 +21,7 @@ Todas as requisições externas devem passar pelo Gateway (porta 8080). As porta
 Pré-requisito: Docker e Docker Compose.
 
 ```bash
-docker compose up --build
+docker compose up -d
 ```
 
 Isso sobe, nesta ordem: `postgres`, `mongo`, `config-server`, `discovery-server` e, em seguida, `api-gateway`, `user-service` e `stats-service`.
@@ -42,8 +42,6 @@ mvn -pl api-gateway -am spring-boot:run
 mvn -pl user-service -am spring-boot:run
 mvn -pl stats-service -am spring-boot:run
 ```
-
-> Nota: se o seu `~/.m2/settings.xml` estiver configurado com um mirror corporativo (Nexus) inacessível fora da rede da empresa, use `mvn -s <settings-sem-mirror>.xml ...` ou ajuste o mirror antes de buildar este projeto.
 
 ## Fluxo de uso (Postman/Insomnia)
 
